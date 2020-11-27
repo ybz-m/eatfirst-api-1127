@@ -1,0 +1,119 @@
+spring:
+  profiles:
+    active: dev
+#  main:
+#    allow-bean-definition-overriding: true
+  # JDBC
+  datasource:
+    multidb:
+      primary:
+        jdbc-url: jdbc:postgresql://18.182.1.197:15432/eatfirst
+        username: postgres
+        password: 8NwudGGg
+        pool-name: primary-pool
+#        hikari:
+        connection-timeout: 3000
+        validation-timeout: 3000
+        idle-timeout: 3000
+        login-timeout: 5
+        max-lifetime: 3000
+        maximum-pool-size: 20
+        minimum-idle: 10
+        read-only: false
+        validation-query: SELECT 1
+      secondary:
+        jdbc-url: jdbc:postgresql://18.182.1.197:15432/eatfirst
+        username: postgres
+        password: 8NwudGGg
+        pool-name: secondary-pool
+#        hikari:
+        connection-timeout: 3000
+        validation-timeout: 3000
+        idle-timeout: 3000
+        login-timeout: 5
+        max-lifetime: 3000
+        maximum-pool-size: 20
+        minimum-idle: 10
+        read-only: true
+        validation-query: SELECT 1
+
+  jpa:
+    open-in-view: true
+    #    generate-ddl: true
+    #    hibernate:
+    #      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        use_sql_comments: true
+        generate_statistics: false
+#  data:
+#    elasticsearch:
+#      cluster-name: docker-cluster
+#      cluster-nodes: 158.101.159.0:9300
+#      repositories:
+#        enabled: true
+  # Redis数据库索引（默认为0）
+  redis:
+    database: 8
+    host: 18.182.1.197
+    port: 6379
+    password: 8NwudGGg
+    timeout: 5000
+    lettuce:
+      shutdown-timeout: 100
+      pool:
+        max-active: 8
+        max-wait: 10000
+        max-idle: 8
+        min-idle: 0
+  cache:
+    type: REDIS
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 100MB
+
+server:
+  port: 8090
+  servlet:
+    context-path: /backend
+
+logging:
+  path: ./logs
+
+# AWS S3 configuration
+aws:
+  access-key-id: AKIAIMLOEGUF4M2BQVLA
+  access-key-secret: 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
+  S3:
+    bucket: eatfirst-test
+    region: ap-northeast-1
+
+# APP configuration
+app:
+  runbatch: true
+  machine: 1
+#  reindexesearch: false
+security:
+  secret-key: rs)4y7l=srsU/"
+  token-authorization: Authorization
+  token-refresh: RefreshToken
+  token-header: Bearer
+  token-expiration: 30
+  token-expiration-long: 1440
+  token-new: newToken
+# 分布式锁的设置
+distributedlock:
+  #超时时间 秒
+  timeout: 10
+  #重试次数
+  retries: 3
+  #等待时间 毫秒
+  waitingTime: 3000
+# 高频check
+frequentlycheck:
+  #间隔时间 秒
+  timeout: 3

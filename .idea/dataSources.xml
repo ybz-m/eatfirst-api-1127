@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="backend@168.138.216.217" uuid="2bfd945e-535c-44b2-8628-8cb9ee20637a">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://168.138.216.217:13306/backend</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="18.182.1.197" uuid="6f82c96b-778a-46f7-8013-65bdeaeac01f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://18.182.1.197:15432/eatfirst</jdbc-url>
+    </data-source>
+  </component>
+</project>

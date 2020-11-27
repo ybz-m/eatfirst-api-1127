@@ -1,0 +1,5 @@
+{
+  "allInOne": true, // whether to merge documents into one file, generally recommended as true
+  "isStrict": false,//If the strict mode is set to true, Smart-doc forces that the public method in each interface in the code has a comment.
+  "outPath": "/Users/yangzhou/work/yangzhou/eatfirst-api/doc" //Set the api document output path.
+}
